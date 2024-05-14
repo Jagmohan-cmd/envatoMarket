@@ -60,3 +60,40 @@ pages_list.addEventListener("mouseleave",()=>{
 
 /////////////////////  PAGES LIST TOGGLE IS ENDED HERE /////////////////////
 
+
+let display = document.querySelectorAll(".display");
+let changeIcon = document.getElementsByClassName("change");
+
+display.forEach((item) => {
+
+    item.addEventListener("click", () => {
+        let toggle = item.getAttribute("data-val")
+        if(toggle == "false"){
+        item.setAttribute("data-val" , "true");
+
+        }
+        else{
+            item.setAttribute("data-val" , "false");
+        }
+
+        if(item.getAttribute("data-val") == "true"){
+            item.nextElementSibling.style.display = "block"
+            item.style.backgroundColor = "#264B63";
+            item.style.color = "white";
+            item.childNodes[1].className = "fa-solid fa-arrow-up-long";
+
+        }
+        else{
+            item.nextElementSibling.style.display = "none"
+            item.style.backgroundColor = "#FEFBEA";
+            item.style.color = "black";
+            item.childNodes[1].className = "fa-solid fa-chevron-down";
+        }
+    })
+   
+})
+
+
+
+
+
